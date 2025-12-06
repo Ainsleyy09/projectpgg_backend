@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('prices', function (Blueprint $table) {
             $table->id();
             $table->foreignId('program_id')->constrained('programs')->onDelete('cascade');
-            $table->decimal('price', 10, 2);
+            $table->decimal('price', 13, 2);
             $table->text('description');
             $table->timestamps();
         });

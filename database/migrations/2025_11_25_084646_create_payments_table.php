@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('registration_id')->constrained('registrations')->onDelete('cascade');
             $table->string('order_id')->unique();
-            $table->decimal('amount', 10, 2);
+            $table->decimal('amount', 13, 2);
             $table->string('payment_method')->default('midtrans');
             $table->string('transaction_id')->nullable();
             $table->datetime('payment_date')->nullable();
