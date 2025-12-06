@@ -34,7 +34,7 @@ class ProgramController extends Controller
             'payment_type' => 'required|in:awal,akhir',
             'program_type' => 'required|in:regular,event,private,special',
             'duration' => 'required|string|max:100',
-            'program_photo' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'program_photo' => 'required|image|mimes:jpeg,jpg,png|max:10240',
             'status' => 'required|in:aktif,nonaktif',
         ]);
 
@@ -99,7 +99,7 @@ class ProgramController extends Controller
             'payment_type' => 'required|in:awal,akhir',
             'program_type' => 'required|in:regular,event,private,special',
             'duration' => 'required|string|max:100',
-            'program_photo' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
+            'program_photo' => 'nullable|image|mimes:jpeg,jpg,png|max:10240',
             'status' => 'required|in:aktif,nonaktif',
         ]);
 

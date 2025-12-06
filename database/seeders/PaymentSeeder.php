@@ -46,7 +46,7 @@ class PaymentSeeder extends Seeder
             'amount' => 150000,
             'payment_method' => 'Bank Transfer',
             'transaction_id' => 'TRX004',
-            'payment_date' => Carbon::now(),
+            'payment_date' => Carbon::now()->subDays(3),
             'status' => 'failed',
         ]);
     }

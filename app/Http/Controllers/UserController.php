@@ -5,10 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\DB;
-use App\Mail\VerifyEmail;
 
 class UserController extends Controller
 {
@@ -70,19 +66,9 @@ class UserController extends Controller
             'role' => $request->role,
         ]);
 
-        $token = Str::random(64);
-        DB::table('email_verifications')->insert([
-            'user_id' => $user->id,
-            'token' => $token,
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
-
-        Mail::to($user->email)->send(new VerifyEmail($user, $token));
-
         return response()->json([
             'success' => true,
-            'message' => 'User created successfully! Verification email sent.',
+            'message' => 'User created successfully!',
             'data' => $user
         ], 201);
     }

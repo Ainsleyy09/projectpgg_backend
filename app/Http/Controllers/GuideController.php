@@ -35,7 +35,7 @@ class GuideController extends Controller
             'email' => 'required|email|max:255|unique:guides,email',
             'instagram' => 'required|string|max:255',
             'bio' => 'nullable|string',
-            'photo' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'photo' => 'required|image|mimes:jpeg,jpg,png|max:10240',
         ]);
 
         if ($validator->fails()) {
@@ -101,7 +101,7 @@ class GuideController extends Controller
             'email' => 'required|email|max:255|unique:guides,email,' . $id,
             'bio' => 'nullable|string',
             'instagram' => 'required|string|max:255',
-            'photo' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
+            'photo' => 'nullable|image|mimes:jpeg,jpg,png|max:10240',
         ]);
 
         if ($validator->fails()) {

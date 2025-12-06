@@ -14,6 +14,36 @@ class ScheduleSeeder extends Seeder
     public function run(): void
     {
         Schedule::create([
+            'program_id' => 1,
+            'guide_id' => 6,
+            'date' => '2025-12-10',
+            'start_time' => '08:00:00',
+            'end_time' => '10:00:00',
+            'quota' => 15,
+            'price_id' => null,
+        ]);
+
+        Schedule::create([
+            'program_id' => 1,
+            'guide_id' => 3,
+            'date' => '2025-12-11',
+            'start_time' => '08:00:00',
+            'end_time' => '10:00:00',
+            'quota' => 20,
+            'price_id' => null,
+        ]);
+
+        Schedule::create([
+            'program_id' => 2,
+            'guide_id' => 5,
+            'date' => '2025-12-11',
+            'start_time' => '08:00:00',
+            'end_time' => '10:00:00',
+            'quota' => 10,
+            'price_id' => null,
+        ]);
+
+        Schedule::create([
             'program_id' => 11,
             'guide_id' => 1,
             'date' => '2025-11-05',
